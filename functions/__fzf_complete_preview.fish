@@ -7,8 +7,6 @@ function __fzf_complete_preview -d 'generate preview for completion widget.
   set -l selected $argv[2]
   set -l information $argv[3]
 
-  set -l path (string replace "~" $HOME -- $selected)
-
   # show aditional data
   if test -n $information
     echo $information\n
@@ -20,24 +18,8 @@ function __fzf_complete_preview -d 'generate preview for completion widget.
     echo $$evar
   end
 
-  # list directories on preview
-  if test -d "$path"
-    echo "Folder"\n
-    eval $FZF_PREVIEW_DIR_CMD (string escape $path)
-    return
-  end
-
-  # show ten lines of non-binary files preview
-  if test -f "$path"
-    if grep -qI . "$path"
-      echo "Text file"\n
-      eval $FZF_PREVIEW_TEXT_FILE_CMD (string escape $path)
-    else
-      echo "Binary file"\n
-      eval $FZF_PREVIEW_BINARY_FILE_CMD (string escape $path)
-    end
-    return
-  end
+  __fzf_preview_git "$cmd" "$selected" "$information"; and return
+  __fzf_preview_file "$selected"; and return
 
   # if fish knows about it, let it show info
   string match -qr ".*\s.*" "$cmd"; and return
