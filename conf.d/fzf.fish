@@ -33,7 +33,7 @@ if not set --query FZF_GIT_DIFF_FILE_CMD
   set -gx FZF_GIT_DIFF_FILE_CMD "git diff -- \$file"
   if type -q delta
     set -gx FZF_GIT_DIFF_FILE_CMD "$FZF_GIT_DIFF_FILE_CMD | delta"
-  elif type -q diff-so-fancy
+  else if type -q diff-so-fancy
     set -gx FZF_GIT_DIFF_FILE_CMD "$FZF_GIT_DIFF_FILE_CMD | diff-so-fancy"
   end
 end
@@ -43,7 +43,7 @@ if not set --query FZF_GIT_SHOW_CMD
   set -gx FZF_GIT_SHOW_CMD "git show --color=always --date=relative --abbrev-commit \$commit"
   if type -q delta
     set -gx FZF_GIT_SHOW_CMD "$FZF_GIT_SHOW_CMD | delta"
-  elif type -q diff-so-fancy
+  else if type -q diff-so-fancy
     set -gx FZF_GIT_SHOW_CMD "$FZF_GIT_SHOW_CMD | diff-so-fancy"
   end
 end
