@@ -1,8 +1,10 @@
-if not set --query fzf_fish_custom_keybindings
-  # Tab for completion
-  __fzf_binding \t '__fzf_complete'
-  # Ctrl+R for search history
-  __fzf_binding \cr '__fzf_search_history'
+function _fzf_init -v fish_key_bindings
+  if not set --query fzf_fish_custom_keybindings
+    # Tab for completion
+    __fzf_binding \t '__fzf_complete'
+    # Ctrl+R for search history
+    __fzf_binding \cr '__fzf_search_history'
+  end
 end
 
 function _fzf_uninstall -e fzf_uninstall
@@ -10,3 +12,5 @@ function _fzf_uninstall -e fzf_uninstall
   set --names | string replace --filter --regex '(^FZF)' 'set --erase $1' | source
   functions --erase _fzf_uninstall
 end
+
+_fzf_init
