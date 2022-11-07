@@ -25,7 +25,7 @@ end
 
 You can install following command tools to give more performance of your shell:
 
-- [bat](https://github.com/sharkdp/bat): Show files in fzf preview, replacement for `cat` with some robust features 
+- [bat](https://github.com/sharkdp/bat): Show files in fzf preview, replacement for `cat` with some robust features
 - [exa](https://github.com/ogham/exa): Show folder in fzf preview, replacement for `ls`
 - [delta](https://github.com/dandavison/delta) or [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy): Show git diff with human readable in fzf preview
 - [emojify](mrowa44/emojify): Show emoji in fzf preview
@@ -35,3 +35,4 @@ You can install following command tools to give more performance of your shell:
 | Key bindings | Remarks |
 |--------------|---------|
 | Ctrl + R | Search through command history from all interactive sessions of Fish |
+| Ctrl + F | Search files |
