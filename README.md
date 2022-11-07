@@ -36,3 +36,4 @@ You can install following command tools to give more performance of your shell:
 |--------------|---------|
 | Ctrl + R | Search through command history from all interactive sessions of Fish |
 | Ctrl + F | Search files |
+| Alt + C | Change directory into subfolder |

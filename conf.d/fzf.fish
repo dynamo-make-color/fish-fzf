@@ -6,6 +6,8 @@ function _fzf_init -v fish_key_bindings
     __fzf_binding \cr '__fzf_search_history'
     # Ctrl+F for search files
     __fzf_binding \cf '__fzf_search_file'
+    # Ctrl+T for cd into subfolders
+    __fzf_binding \ct '__fzf_cd'
   end
 end
 
