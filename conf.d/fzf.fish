@@ -1,3 +1,8 @@
+# not used in non-interactive mode
+if not status is-interactive
+  exit
+end
+
 function _fzf_init -v fish_key_bindings
   if not set --query fzf_fish_custom_keybindings
     # Tab for completion
