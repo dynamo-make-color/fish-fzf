@@ -9,8 +9,8 @@ function __fzf_binding -d "Setup key bindings with callback"
     return 1
   end
 
-  bind "$argv[1]" "$argv[2]"
+  bind --preset "$argv[1]" "$argv[2]"
   if test "$fish_key_bindings" = fish_vi_key_bindings
-    bind -M insert "$argv[1]" "$argv[2]"
+    bind --preset -M insert "$argv[1]" "$argv[2]"
   end
 end
