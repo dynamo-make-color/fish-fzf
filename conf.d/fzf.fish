@@ -3,7 +3,7 @@ if not status is-interactive
   exit
 end
 
-function _fzf_init -v fish_key_bindings
+function _fzf_init -v fish_key_bindings -v fish_bind_mode
   if not set --query fzf_fish_custom_keybindings
     # Tab for completion
     __fzf_binding \t '__fzf_complete'
